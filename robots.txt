@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://trenazher-tablicy-umnozheniya.github.io/sitemap.xml
