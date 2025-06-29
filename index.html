@@ -48,51 +48,6 @@
 <div id="yandex_rtb_R-A-16060271-1-wrapper" style="display: none; position: fixed; top: 50px; left: 0; max-width: 300px; width: 100%; z-index: 9999; background: white; box-shadow: 2px 0 5px rgba(0,0,0,0.2);">
     <div id="yandex_rtb_R-A-16060271-1" style="position: relative;"></div>
 </div>
-<script>
-if (window.innerWidth >= 768) {
-    const wrapper = document.getElementById('yandex_rtb_R-A-16060271-1-wrapper');
-    const closeBtn = document.createElement('div');
-    closeBtn.innerHTML = `
-        <svg width="60" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10.485 6.06A8 8 0 0118.246 0h23.508a8 8 0 017.76 6.06l3.728 14.91A4 4 0 0057.123 24H60 0h2.877a4 4 0 003.88-3.03l3.728-14.91z" fill="#D1D6E0"></path>
-            <path d="M24.793 6.793a1 1 0 000 1.414L28.586 12l-3.793 3.793a1 1 0 001.414 1.414L30 13.414l3.793 3.793a1 1 0 001.414-1.414L31.414 12l3.793-3.793a1 1 0 00-1.414-1.414L30 10.586l-3.793-3.793a1 1 0 00-1.414 0z" fill="#575C66"></path>
-        </svg>
-    `;
-    closeBtn.style.cssText = `
-        position: absolute;
-        top: -24px;
-        right: 0;
-        cursor: pointer;
-        z-index: 10000;
-    `;
-    wrapper.appendChild(closeBtn);
-    closeBtn.addEventListener('click', () => {
-        wrapper.style.display = 'none';
-    });
-    wrapper.style.display = 'block';
-    
-    window.yaContextCb = window.yaContextCb || [];
-    window.yaContextCb.push(() => {
-        Ya.Context.AdvManager.render({
-            blockId: "R-A-16060271-1",
-            renderTo: "yandex_rtb_R-A-16060271-1"
-        });
-    });
-} else {
-    const mobileAd = document.getElementById('yandex_rtb_R-A-16060271-1-mobile');
-    if (mobileAd) {
-        mobileAd.style.display = 'block';
-        
-        window.yaContextCb = window.yaContextCb || [];
-        window.yaContextCb.push(() => {
-            Ya.Context.AdvManager.render({
-                blockId: "R-A-16060271-1",
-                renderTo: "yandex_rtb_R-A-16060271-1-mobile"
-            });
-        });
-    }
-}
-</script>
     <div class="container">
         <button class="back-btn hidden" onclick="showMainMenu()">← Назад</button>
         
@@ -331,6 +286,51 @@ window.yaContextCb.push(() => {
         "platform": "desktop"
     })
 })
+</script>
+<script>
+if (window.innerWidth >= 768) {
+    const wrapper = document.getElementById('yandex_rtb_R-A-16060271-1-wrapper');
+    const closeBtn = document.createElement('div');
+    closeBtn.innerHTML = `
+        <svg width="60" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.485 6.06A8 8 0 0118.246 0h23.508a8 8 0 017.76 6.06l3.728 14.91A4 4 0 0057.123 24H60 0h2.877a4 4 0 003.88-3.03l3.728-14.91z" fill="#D1D6E0"></path>
+            <path d="M24.793 6.793a1 1 0 000 1.414L28.586 12l-3.793 3.793a1 1 0 001.414 1.414L30 13.414l3.793 3.793a1 1 0 001.414-1.414L31.414 12l3.793-3.793a1 1 0 00-1.414-1.414L30 10.586l-3.793-3.793a1 1 0 00-1.414 0z" fill="#575C66"></path>
+        </svg>
+    `;
+    closeBtn.style.cssText = `
+        position: absolute;
+        top: -24px;
+        right: 0;
+        cursor: pointer;
+        z-index: 10000;
+    `;
+    wrapper.appendChild(closeBtn);
+    closeBtn.addEventListener('click', () => {
+        wrapper.style.display = 'none';
+    });
+    wrapper.style.display = 'block';
+    
+    window.yaContextCb = window.yaContextCb || [];
+    window.yaContextCb.push(() => {
+        Ya.Context.AdvManager.render({
+            blockId: "R-A-16060271-1",
+            renderTo: "yandex_rtb_R-A-16060271-1"
+        });
+    });
+} else {
+    const mobileAd = document.getElementById('yandex_rtb_R-A-16060271-1-mobile');
+    if (mobileAd) {
+        mobileAd.style.display = 'block';
+        
+        window.yaContextCb = window.yaContextCb || [];
+        window.yaContextCb.push(() => {
+            Ya.Context.AdvManager.render({
+                blockId: "R-A-16060271-1",
+                renderTo: "yandex_rtb_R-A-16060271-1-mobile"
+            });
+        });
+    }
+}
 </script>	
 </body>
 </html>
