@@ -45,11 +45,9 @@
 <script src="https://yandex.ru/ads/system/context.js" async></script>	
 </head>
 <body>
-
-<div id="yandex_rtb_R-A-16060271-1-wrapper" style="display: none; position: fixed; top: 50px; left: 0; max-width: 300px;width: 100%; z-index: 9999; background: white; box-shadow: 2px 0 5px rgba(0,0,0,0.2);">
+<div id="yandex_rtb_R-A-16060271-1-wrapper" style="display: none; position: fixed; top: 50px; left: 0; max-width: 300px; width: 100%; z-index: 9999; background: white; box-shadow: 2px 0 5px rgba(0,0,0,0.2);">
     <div id="yandex_rtb_R-A-16060271-1" style="position: relative;"></div>
 </div>
-
 <script>
 if (window.innerWidth >= 768) {
     const wrapper = document.getElementById('yandex_rtb_R-A-16060271-1-wrapper');
@@ -79,6 +77,20 @@ if (window.innerWidth >= 768) {
             renderTo: "yandex_rtb_R-A-16060271-1"
         });
     });
+} else {
+    const mobileContainer = document.getElementById('yandex_mobile_container');
+    const mobileAdWrapper = document.createElement('div');
+    mobileAdWrapper.id = 'yandex_rtb_R-A-16060271-1-mobile';
+    const mobileAdInner = document.createElement('div');
+    mobileAdInner.id = 'yandex_rtb_R-A-16060271-1-mobile-inner';
+    mobileAdWrapper.appendChild(mobileAdInner);
+    mobileContainer.appendChild(mobileAdWrapper);
+    window.yaContextCb.push(() => {
+        Ya.Context.AdvManager.render({
+            blockId: "R-A-16060271-1",
+            renderTo: "yandex_rtb_R-A-16060271-1-mobile-inner"
+        });
+    });
 }
 </script>
     <div class="container">
@@ -86,6 +98,7 @@ if (window.innerWidth >= 768) {
         
         <div id="mainMenu">
             <h1>🧮 Тренажер таблицы умножения</h1>
+	    <div id="yandex_mobile_container"></div>
             <div class="stats">
                 <div class="stat-item">
                     <div class="stat-number" id="totalSolved">0</div>
@@ -297,18 +310,6 @@ if (window.innerWidth >= 768) {
     </div>
 <!-- Yandex.Metrika counter --> <script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date(); for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }} k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(102713370, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/102713370" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
 
-<!-- Yandex.RTB R-A-16060271-4 -->
-<script>
-window.yaContextCb.push(() => {
-    setTimeout(() => {
-        Ya.Context.AdvManager.render({
-            "blockId": "R-A-16060271-4",
-            "type": "floorAd",
-            "platform": "touch"
-        });
-    }, 5000);
-});
-</script>
 <!-- Yandex.RTB R-A-16060271-3 -->
 <script>
 window.yaContextCb.push(() => {
