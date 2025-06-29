@@ -51,7 +51,6 @@
 <script>
 if (window.innerWidth >= 768) {
     const wrapper = document.getElementById('yandex_rtb_R-A-16060271-1-wrapper');
-    const adContainer = document.getElementById('yandex_rtb_R-A-16060271-1');
     const closeBtn = document.createElement('div');
     closeBtn.innerHTML = `
         <svg width="60" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -71,6 +70,8 @@ if (window.innerWidth >= 768) {
         wrapper.style.display = 'none';
     });
     wrapper.style.display = 'block';
+    
+    window.yaContextCb = window.yaContextCb || [];
     window.yaContextCb.push(() => {
         Ya.Context.AdvManager.render({
             blockId: "R-A-16060271-1",
@@ -78,19 +79,18 @@ if (window.innerWidth >= 768) {
         });
     });
 } else {
-
-    const h1 = document.querySelector('h1');
-    const mobileAd = document.createElement('div');
-    mobileAd.id = 'yandex_rtb_R-A-16060271-1-mobile';
-    h1.insertAdjacentElement('afterend', mobileAd);
-    
-    window.yaContextCb = window.yaContextCb || [];
-    window.yaContextCb.push(() => {
-        Ya.Context.AdvManager.render({
-            blockId: "R-A-16060271-1",
-            renderTo: "yandex_rtb_R-A-16060271-1-mobile"
+    const mobileAd = document.getElementById('yandex_rtb_R-A-16060271-1-mobile');
+    if (mobileAd) {
+        mobileAd.style.display = 'block';
+        
+        window.yaContextCb = window.yaContextCb || [];
+        window.yaContextCb.push(() => {
+            Ya.Context.AdvManager.render({
+                blockId: "R-A-16060271-1",
+                renderTo: "yandex_rtb_R-A-16060271-1-mobile"
+            });
         });
-    });
+    }
 }
 </script>
     <div class="container">
@@ -98,7 +98,7 @@ if (window.innerWidth >= 768) {
         
         <div id="mainMenu">
             <h1>🧮 Тренажер таблицы умножения</h1>
-	    
+            <div id="yandex_rtb_R-A-16060271-1-mobile" style="display: none;"></div>
             <div class="stats">
                 <div class="stat-item">
                     <div class="stat-number" id="totalSolved">0</div>
