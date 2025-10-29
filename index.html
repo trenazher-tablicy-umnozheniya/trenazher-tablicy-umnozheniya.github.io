@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онлайн тренажер таблицы умножения бесплатно</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Бесплатный онлайн тренажер таблицы умножения для 2-3 класса. Интерактивные упражнения помогут быстро выучить таблицу умножения. Игровая форма обучения математике для школьников.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Математический тренажер">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Онлайн тренажер таблицы умножения бесплатно">
+    <meta property="og:description" content="Бесплатный онлайн тренажер таблицы умножения для 2-3 класса. Интерактивные упражнения помогут быстро выучить таблицу умножения. Игровая форма обучения математике для школьников.">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://trenazher-tablicy-umnozheniya.github.io/" />
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalApplication",
+        "name": "Онлайн тренажер таблицы умножения",
+        "description": "Бесплатный интерактивный тренажер для изучения таблицы умножения учениками 2-3 класса",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "RUB"
+        },
+        "educationalLevel": "Elementary School",
+        "learningResourceType": "Interactive Tool",
+        "inLanguage": "ru"
+    }
+    </script>
+	
+<script src="/script1.js"></script>
+<link rel="stylesheet" href="/styles.css">
+<meta name="yandex-verification" content="da2673e834232e0b" />
+<meta name="google-site-verification" content="oTcXNPK-Hro98udCyc2llYgutTl8UYt-cCOJ24L5ZiM" />
+<!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>	
+</head>
+<body>
+    <div class="container">
+        <button class="back-btn hidden" onclick="showMainMenu()">← Назад</button>
+        
+        <div id="mainMenu">
+            <h1>🧮 Тренажер таблицы умножения</h1>
+            <div id="yandex_rtb_R-A-16060271-1-mobile" style="display: none;"></div>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number" id="totalSolved">0</div>
+                    <div class="stat-label">Решено примеров</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="accuracy">0%</div>
+                    <div class="stat-label">Точность</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="currentStreak">0</div>
+                    <div class="stat-label">Текущая серия</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="bestStreak">0</div>
+                    <div class="stat-label">Лучшая серия</div>
+                </div>
+            </div>
+            <div class="menu-buttons">
+                <button class="btn" onclick="showLearning()">
+                    📚 Изучение<br>
+                    <small>Изучайте таблицу умножения поэтапно</small>
+                </button>
+                <button class="btn" onclick="showTraining()">
+                    🎯 Тренировка<br>
+                    <small>Практика с вариантами ответов</small>
+                </button>
+                <button class="btn" onclick="showTesting()">
+                    ✅ Проверка знаний<br>
+                    <small>Введите правильный ответ</small>
+                </button>
+                <button class="btn" onclick="showProgress()">
+                    📊 Прогресс<br>
+                    <small>Ваши достижения и статистика</small>
+                </button>
+                <button class="btn" onclick="showHowTo()">
+                     ❓ Как пользоваться<br>
+                    <small>Инструкция и советы для учащегося</small>
+                </button>
+            </div>
+        </div>
+        
+        <div id="learningMode" class="content-area hidden">
+            <h2>📚 Режим изучения</h2>
+            <p>Выберите число для изучения таблицы умножения:</p>
+            <div class="number-selector">
+                <button class="number-btn" onclick="showMultiplicationTable(2)">2</button>
+                <button class="number-btn" onclick="showMultiplicationTable(3)">3</button>
+                <button class="number-btn" onclick="showMultiplicationTable(4)">4</button>
+                <button class="number-btn" onclick="showMultiplicationTable(5)">5</button>
+                <button class="number-btn" onclick="showMultiplicationTable(6)">6</button>
+                <button class="number-btn" onclick="showMultiplicationTable(7)">7</button>
+                <button class="number-btn" onclick="showMultiplicationTable(8)">8</button>
+                <button class="number-btn" onclick="showMultiplicationTable(9)">9</button>
+            </div>
+            <div id="multiplicationTable"></div>
+        </div>
+
+        <div id="trainingMode" class="content-area hidden">
+            <h2>🎯 Режим тренировки</h2>
+            <div id="trainingSetup">
+                <p>Выберите число для тренировки:</p>
+                <div class="number-selector">
+                    <button class="number-btn" onclick="startTraining(2)">2</button>
+                    <button class="number-btn" onclick="startTraining(3)">3</button>
+                    <button class="number-btn" onclick="startTraining(4)">4</button>
+                    <button class="number-btn" onclick="startTraining(5)">5</button>
+                    <button class="number-btn" onclick="startTraining(6)">6</button>
+                    <button class="number-btn" onclick="startTraining(7)">7</button>
+                    <button class="number-btn" onclick="startTraining(8)">8</button>
+                    <button class="number-btn" onclick="startTraining(9)">9</button>
+                </div>
+                <button class="btn" onclick="startTraining('random')" style="margin-top: 20px;">
+                    🎲 Случайные примеры
+                </button>
+            </div>
+            <div id="trainingGame" class="hidden">
+                <div class="timer" id="trainingTimer">⏱️ 60</div>
+                <div class="streak" id="trainingStreak">🔥 Серия: 0</div>
+                <div class="question" id="trainingQuestion"></div>
+                <div class="options" id="trainingOptions"></div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="trainingProgress" style="width: 0%"></div>
+                    <div class="progress-text" id="trainingProgressText">0/10</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="testingMode" class="content-area hidden">
+            <h2>✅ Проверка знаний таблицы умножения</h2>
+            <div id="testingSetup">
+                <p>Выберите уровень сложности:</p>
+                <div class="menu-buttons">
+                    <button class="btn" onclick="startTesting('easy')">
+                        🟢 Легкий<br>
+                        <small>Числа 2-5</small>
+                    </button>
+                    <button class="btn" onclick="startTesting('medium')">
+                        🟡 Средний<br>
+                        <small>Числа 2-7</small>
+                    </button>
+                    <button class="btn" onclick="startTesting('hard')">
+                        🔴 Сложный<br>
+                        <small>Числа 2-9</small>
+                    </button>
+                </div>
+            </div>
+            <div id="testingGame" class="hidden">
+                <div class="timer" id="testingTimer">⏱️ 90</div>
+                <div class="streak" id="testingStreak">🔥 Серия: 0</div>
+                <div class="question" id="testingQuestion"></div>
+                <input type="number" class="input-field" id="testingInput" placeholder="?" onkeypress="checkEnter(event, 'testing')">
+                <br>
+                <button class="btn" onclick="checkTestingAnswer()">Проверить</button>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="testingProgress" style="width: 0%"></div>
+                    <div class="progress-text" id="testingProgressText">0/20</div>
+                </div>
+                <div id="testingFeedback"></div>
+            </div>
+        </div>
+
+        <div id="progressMode" class="content-area hidden">
+            <h2>📊 Ваш прогресс</h2>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number" id="progressTotalSolved">0</div>
+                    <div class="stat-label">Всего решено</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="progressCorrect">0</div>
+                    <div class="stat-label">Правильно</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="progressAccuracy">0%</div>
+                    <div class="stat-label">Точность</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="progressBestStreak">0</div>
+                    <div class="stat-label">Лучшая серия</div>
+                </div>
+            </div>
+            
+            <h3>🏆 Достижения</h3>
+            <div id="achievements"></div>
+            
+            <h3>📈 Прогресс по таблицам</h3>
+            <div id="tableProgress"></div>
+            
+            <button class="btn" onclick="resetProgress()" style="margin-top: 20px; background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+                🗑️ Сбросить прогресс
+            </button>
+        </div>
+        <div id="howto" class="content-area hidden">
+                <h3>📖 Как пользоваться тренажером таблицы умножения</h3>
+                <p>Наш бесплатный онлайн тренажер поможет ученикам 2-3 класса быстро и легко выучить таблицу умножения. Выберите подходящий режим обучения:</p>
+                
+                <div class="faq-item">
+                    <div class="faq-question">🔹 Режим "Изучение"</div>
+                    <div class="faq-answer">Идеально для начинающих изучать таблицу умножения. Выберите число от 2 до 9, и система покажет всю таблицу умножения для этого числа. Это поможет ребенку запомнить последовательность и закономерности.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">🔹 Режим "Тренировка"</div>
+                    <div class="faq-answer">Интерактивные упражнения с вариантами ответов. Выберите конкретное число для тренировки или режим случайных примеров. У вас есть 60 секунд на каждую серию, что развивает скорость мышления.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">🔹 Режим "Проверка знаний"</div>
+                    <div class="faq-answer">Серьезная проверка навыков! Вводите правильный ответ самостоятельно. Три уровня сложности: легкий (2-5), средний (2-7) и сложный (2-9). Отличный способ подготовиться к контрольной работе.</div>
+                </div>
+
+                <h3>Часто задаваемые вопросы</h3>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Для какого возраста подходит тренажер?</div>
+                    <div class="faq-answer">Тренажер разработан специально для учеников 2-3 класса (возраст 7-9 лет), когда дети начинают изучать таблицу умножения в школе. Также подходит для повторения в старших классах.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Сколько времени нужно заниматься?</div>
+                    <div class="faq-answer">Рекомендуем заниматься по 15-20 минут в день. Регулярные короткие занятия эффективнее длительных, но редких тренировок.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Как быстро ребенок выучит таблицу умножения?</div>
+                    <div class="faq-answer">При регулярных занятиях большинство детей осваивают таблицу умножения за 2-4 недели. Игровая форма делает процесс обучения увлекательным и эффективным.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Нужна ли регистрация?</div>
+                    <div class="faq-answer">Нет! Тренажер полностью бесплатный и не требует регистрации. Ваш прогресс сохраняется в браузере автоматически.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Работает ли на мобильных устройствах?</div>
+                    <div class="faq-answer">Да, тренажер адаптирован для смартфонов и планшетов. Ребенок может заниматься где угодно и когда угодно.</div>
+                </div>
+            </div>  
+            <footer class="footer" id="fm">
+                <div class="footer-menu">
+                    <a href="/about/" class="footer-link">ℹ️ О проекте</a>
+                    <a href="/feedback/" class="footer-link">📧 Обратная связь</a>
+                    <a href="/privacy/" class="footer-link">🔒 Политика конфиденциальности</a>
+                    <p>&copy; 2025 Онлайн тренажер таблицы умножения.</p>
+                </div>
+                
+            </footer>
+    </div>
+<!-- Yandex.Metrika counter --> <script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date(); for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }} k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(102713370, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/102713370" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+
+<!-- Yandex.RTB R-A-16060271-3 -->
+<script>
+window.yaContextCb.push(() => {
+   setTimeout(() => {	
+    Ya.Context.AdvManager.render({
+        "blockId": "R-A-16060271-3",
+        "type": "fullscreen",
+        "platform": "touch"
+    });
+    }, 3000);
+});
+</script>	
+<!-- Yandex.RTB R-A-16060271-2 -->
+<script>
+window.yaContextCb.push(() => {
+    Ya.Context.AdvManager.render({
+        "blockId": "R-A-16060271-2",
+        "type": "fullscreen",
+        "platform": "desktop"
+    })
+})
+</script>
+
+</body>
+</html>
